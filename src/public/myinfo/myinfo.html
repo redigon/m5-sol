@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Registered Information</h2>
+
+  <div ng-if="myInfoCtrl.signedUp">
+    <div class="row">
+      <div class="col-md-6">
+        <p>First name: {{ myInfoCtrl.firstName }}</p>
+        <p>Last name: {{ myInfoCtrl.lastName }}</p>
+        <p>E-mail address: {{ myInfoCtrl.email }}</p>
+        <p>Phone number: {{ myInfoCtrl.phone }}</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Favorite dish</h3>
+        <div ng-if="myInfoCtrl.favoriteMenuItem">
+          <img ng-src="images/menu/{{ myInfoCtrl.favoriteMenuItem.category_short_name }}/{{ myInfoCtrl.favoriteMenuItem.category_short_name }}.jpg" class="pull-right">
+          <h4>{{ myInfoCtrl.favoriteMenuItem.name }} [{{ myInfoCtrl.favoriteDish }}]</h4>
+          <p>Description:{{ myInfoCtrl.favoriteMenuItem.description }}</p>
+                  <p>Small portion name:{{ myInfoCtrl.favoriteMenuItem.small_portion_name }}</p>
+          <p>Large portion name:{{ myInfoCtrl.favoriteMenuItem.large_portion_name }}</p>
+        </div>
+        <div ng-show="!myInfoCtrl.favoriteMenuItem">
+          <p>(No such menu number exists)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="!myInfoCtrl.signedUp">
+    <p>Not Signed Up Yet.</p>
+    <p><a ui-sref-active="active"  ui-sref="public.signup">Sign up Now!</a></p>
+  </div>
+
+
+</div>
