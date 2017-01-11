@@ -47,6 +47,8 @@
           <div class="col-sm-9">
             <input type="text" name="favoriteDish" id="favoriteDish" placeholder="Enter short_name of favorite dish"
               ng-model="signUpCtrl.favoriteDish" minlength="1" ng-maxlength="4" class="form-control">
+              <span ng-if="signUpCtrl.registered && !signUpCtrl.favoriteDishFound"
+                style="color:white;">No such menu number exists! ;-(</span>
                   </div>
         </div>
      </div>
