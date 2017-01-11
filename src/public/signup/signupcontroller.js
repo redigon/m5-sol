@@ -11,7 +11,6 @@
     $ctrl.favoriteDishFound = true;
 
     $ctrl.signUp = function(event) {
-      $ctrl.registered = true;
       event.preventDefault();
       var user = {
             firstName: $ctrl.firstName,
