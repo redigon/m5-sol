@@ -8,7 +8,7 @@
   function SignUpController(UsersService, MenuService) {
     var $ctrl = this;
     $ctrl.registered = false;
-    $ctrl.favoriteDishFound = false;
+    $ctrl.favoriteDishFound = true;
 
     $ctrl.signUp = function(event) {
       $ctrl.registered = true;
@@ -28,9 +28,9 @@
           $ctrl.registered = true;
           UsersService.setUser(user);
         }, function(err) {
-          UsersService.setUser(user);
+          // UsersService.setUser(user);
           $ctrl.favoriteDishFound = false;
-          $ctrl.registered = true;
+          $ctrl.registered = false;
         });
     };
   }
